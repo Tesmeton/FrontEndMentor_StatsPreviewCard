@@ -13,7 +13,8 @@ body {
 }
 
 main {
-  font-family: "Inter", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
   background-color: #1b1938;
   width: 90%;
   color: white;
@@ -23,21 +24,27 @@ main {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-family: "Inter", sans-serif;
+  font-size: 1.75em;
   font-weight: 700;
-  padding: 1.5em;
+  padding: 1.5em 1.5em 0.5em 1.5em;
   text-align: center;
 }
 
 h2 {
-  font-size: 15px;
+  font-size: 12px;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0.75em;
 }
 
 p {
   color: rgba(255, 255, 255, 0.75);
   text-align: center;
-  padding: 0 1.5em;
+  padding: 0 2em;
+  line-height: 1.75;
 }
 
 .imgs {
@@ -46,7 +53,8 @@ p {
   border-radius: 10px 10px 0 0;
 }
 
-.imgs::before {
+.imgs .colorOverlay {
+  border-radius: 10px 10px 0 0;
   content: "";
   display: block;
   position: absolute;
@@ -55,24 +63,69 @@ p {
   left: 0;
   right: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(80, 21, 117, 0.75);
+  height: 99.5%;
+  background-color: rgba(117, 2, 189, 0.5);
   z-index: 5;
 }
 
 .mobileImg {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
 
+.desktopImg {
+  display: none;
+}
+
+.prices {
+  font-family: "Inter", sans-serif;
+  padding: 1em 0;
+}
+
 .price {
-  font-family: "Lexend Deca", sans-serif;
   font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+  margin: 1em 0;
 }
 
 .accent {
   color: #aa5cdb;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 800px) {
+  main {
+    max-width: 1440px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .mobileImg {
+    display: none;
+  }
+  .desktopImg {
+    display: block;
+    width: 100%;
+    border-radius: 0px 10px 10px 0px;
+  }
+  .imgs {
+    width: 50%;
+    border-radius: 0px 10px 10px 0px;
+  }
+  .imgs .colorOverlay {
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+  }
+  .content {
+    width: 50%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

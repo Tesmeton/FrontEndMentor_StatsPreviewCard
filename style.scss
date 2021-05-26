@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
-
+// font-family: "Lexend Deca", sans-serif;
+// font-family: "Inter", sans-serif;
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +14,8 @@ body {
 }
 
 main {
-  font-family: "Inter", sans-serif;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
   background-color: hsl(244, 38%, 16%);
   width: 90%;
   color: hsl(0, 0%, 100%);
@@ -23,27 +25,35 @@ main {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-family: "Inter", sans-serif;
+  font-size: 1.75em;
   font-weight: 700;
-  padding: 1.5em;
+  padding: 1.5em 1.5em 0.5em 1.5em;
   text-align: center;
 }
 
 h2 {
-  font-size: 15px;
+  font-size: 12px;
+  font-weight: 400;
   color: hsla(0, 0%, 100%, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0.75em;
 }
 
 p {
   color: hsla(0, 0%, 100%, 0.75);
   text-align: center;
-  padding: 0 1.5em;
+  padding: 0 2em;
+  line-height: 1.75;
 }
 .imgs {
   width: 100%;
   position: relative;
   border-radius: 10px 10px 0 0;
-  &::before {
+
+  .colorOverlay {
+    border-radius: 10px 10px 0 0;
     content: "";
     display: block;
     position: absolute;
@@ -52,22 +62,69 @@ p {
     left: 0;
     right: 0;
     width: 100%;
-    height: 100%;
-    background-color: hsla(277, 70%, 27%, 0.75);
+    height: 99.5%;
+    background-color: rgba(117, 2, 189, 0.5);
     z-index: 5;
   }
 }
 .mobileImg {
   width: 100%;
-  object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
 
+.desktopImg {
+  display: none;
+}
+
+.prices {
+  font-family: "Inter", sans-serif;
+  // width: 50%;
+  padding: 1em 0;
+}
+
 .price {
-  font-family: "Lexend Deca", sans-serif;
   font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+  margin: 1em 0;
 }
 
 .accent {
   color: hsl(277, 64%, 61%);
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 800px) {
+  main {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .mobileImg {
+    display: none;
+  }
+
+  .desktopImg {
+    display: block;
+    width: 100%;
+    border-radius: 0px 10px 10px 0px;
+  }
+
+  .imgs {
+    width: 50%;
+    border-radius: 0px 10px 10px 0px;
+
+    .colorOverlay {
+      height: 100%;
+      border-radius: 0px 10px 10px 0px;
+    }
+  }
+
+  .content {
+    width: 50%;
+  }
 }
