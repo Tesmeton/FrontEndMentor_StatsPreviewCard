@@ -10,6 +10,7 @@ body {
   background-color: #090b1a;
   width: 100%;
   height: 100vh;
+  padding: 50px 0;
 }
 
 main {
@@ -19,8 +20,8 @@ main {
   width: 90%;
   color: white;
   font-size: 15px;
-  margin: 4em auto;
   border-radius: 10px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -97,7 +98,12 @@ p {
   text-transform: uppercase;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1200px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
   main {
     max-width: 1440px;
     display: -webkit-box;
@@ -108,17 +114,44 @@ p {
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
   }
+  h1 {
+    font-size: 3em;
+    text-align: left;
+    padding: 2em 2em 1em 2em;
+  }
+  p {
+    font-size: 1.25em;
+    padding: 0 7em 0 4.5em;
+    text-align: left;
+  }
+  .prices {
+    margin: 2.5em 12em 4em 6em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .prices .price {
+    text-align: left;
+    font-size: 2em;
+  }
   .mobileImg {
     display: none;
-  }
-  .desktopImg {
-    display: block;
-    width: 100%;
-    border-radius: 0px 10px 10px 0px;
   }
   .imgs {
     width: 50%;
     border-radius: 0px 10px 10px 0px;
+    overflow: hidden;
+  }
+  .imgs .desktopImg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .imgs .colorOverlay {
     height: 100%;
